@@ -1,0 +1,36 @@
+        .a {    
+          height: 24px;
+          width: 24px;
+        }
+
+        .block-checkbox {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		margin: 0;
+        padding: 0;
+		cursor: pointer;
+		}		
+		
+		.block-checkbox input {
+        border: 0px;
+	    position: absolute;
+		display: block;
+		top: 0; left: 0;
+		height: 100%;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		outline: 0;
+		opacity: 0;
+        visibility: hidden;		
+		}
+
+		input[type="checkbox"] + img {
+		position: absolute;
+		width: 200%;
+		}
+		
+		input[type="checkbox"]:checked + img {
+		left: -100%;
+		}

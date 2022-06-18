@@ -1,0 +1,56 @@
+.link_pic {
+     height: 40px;
+}
+#link_pic {
+     height: 100%;
+	 border: 2px solid lightgrey;
+	 margin-right: 10px;
+	 float: left;
+}
+.task_name {
+     margin-bottom: 3px;
+	 color: red;
+	 clear: both;
+}
+.task_block {
+     float: left;
+	 width: 100%;
+	/* border: 1px solid black;*/
+	 margin-right: 20px;
+}
+.task_block_main {
+     background-color: yellow; 
+	 float: left; 
+	 width: 620px; 
+	 margin-right: 15px; 
+	 margin-top: 0px;
+}
+.anser_block {
+     border: 4px solid black;
+	 background-color: white;
+	 margin-left: 25px;
+	 margin-right: 25px;
+	 margin-top: 15px;
+	 margin-bottom: 15px;
+	 padding: 10px;
+	 /*height: 200px;*/
+	 }
+.listing_padding {
+	 background-color: white;
+	 margin-left: 25px;
+	 margin-right: 25px;
+}
+.anser_data {
+     color: blue;
+	 font-size: 110%;
+}
+.anser_rez{
+     color: red;
+	 font-size: 140%;
+	 text-align: center;
+	 margin: 5px;
+}
+.anser_task {
+     color: mediumturquoise;
+	 font-size: 110%;
+}
