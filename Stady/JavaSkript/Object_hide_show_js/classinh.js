@@ -48,13 +48,30 @@ nextCat.voice()
 console.log(nextCat.realAge)
 cat.voice()
 console.log(cat.realAge)*/
+// let vtf = alert('Hellow!')
+// alert(`Ты ввел:  ${vtf}`)
+// let param = prompt('Введи количество вершин, размер, цвет через пробел')
+// alert(`Ты ввел:  ${param}`)
+// let ask  = confirm("Привет, нажмешь что-нибудь?")
+// alert(`Ты ввел:  ${ask}`)
+//  Call-back ФУНКЦИИ:
+// function ask(question, yes, no) {
+//     if (confirm(question)) yes()
+//     else no();
+//   }  
+//   function showOk() {
+//     alert( "Вы согласны." );
+//   }  
+//   function showCancel() {
+//     alert( "Вы отменили выполнение." );
+//   }  
+//   // использование: функции showOk, showCancel передаются в качестве аргументов ask
+//   ask("Вы согласны?", showOk, showCancel);
 
-сonsole.log('Privyet!!!');
 // НАЧАЛО ОТЛАЖИВАЕМОЙ ПРОГРАММЫ!!!!!!!!!!!!!!!
 class Component {
     constructor(selector) {
     this.$el = document.getElementById(selector)
-//  this.$el = document.querySelector(selector)
     }
     hide() {
         this.$el.style.display = 'none'
@@ -63,13 +80,12 @@ class Component {
         this.$el.style.display = 'block'
     }
 }
+
 class Box extends Component {
     constructor(options) {
         super(options.selector)
         this.$el.style.width = this.$el.style.height = options.size  + 'px'
-        this.$el.style.height = options.size + 'px'
-        this.$el.style.background = options.color
-    
+        this.$el.style.background = options.color    
     }   
 }
 class Circle extends Box {
@@ -78,6 +94,7 @@ class Circle extends Box {
         this.$el.style.borderRadius = '50%'
     }
 }
+
 const boxA = new Box ({
     selector: '#aaa',
     size: 100,
@@ -98,6 +115,7 @@ const boxC = new Circle ({
     size: 100,
     color: 'blue'
 })
+
 /*
 // ПРИМЕЧАНИЯ:
 // Важно! Не удалось найти блок по ID при помощи
