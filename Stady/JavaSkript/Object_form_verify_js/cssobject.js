@@ -5,6 +5,7 @@
 // Выбираем элемент один из блоков 
 // по значению "селектор"
 // В нашем примере селектор: id="figure"
+alert('Скрипт начал работу')
 const number = prompt('Введите количество вершин: ')
 
 class Component {
@@ -26,7 +27,6 @@ class Form extends Component {
         super(options.selector)
         this.$el.style.height = this.$el.style.width = options.size + 'px'
         this.$el.style.background = options.color
-        const type = typeof options.pickNumber
         switch (options.pickNumber * 1) {
 // Circle            
             case 0:
@@ -43,10 +43,7 @@ class Form extends Component {
             break
 // Triangle
             case 3:
-                this.$el.style.height = this.$el.style.width = '0px' 
-                this.$el.style.border-left  = '50px solid transparent'  
-                this.$el.style.border-right  = '50px solid transparent'
-                this.$el.style.border-bottom  = '100px solid red'
+            
             break
 // Squere
             case 4:
