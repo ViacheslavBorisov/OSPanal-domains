@@ -2,23 +2,12 @@
 // Для работы через консоль - раскоментировать строки
 // ниже и закоментировать все "alert()" и "prompt()"
 
-// const arrString = '12 64 152 77 3 21 875 1 22'
-// console.log('Input data: ', arrString)
-const arrString = prompt('Введите элементы массива для сортировки через пробел')
-alert(`${typeof arrString}`)
-const arrChar = arrString.split(' ')
-// console.log('let arrChar = arrString.split(" ") = ', arrChar)
-alert('arrChar после Split:')
-alert(`${arrChar}`)
-alert(`${typeof arrChar}`)
-const arrNumber = [];
-arrChar.forEach(item => arrNumber.push(Number(item)))
-alert('arrNumber после Number:')
-alert(`${arrNumber}`)
-alert(`${typeof arrNumber}`)
-// console.log('After Number() =', arrNumber)
+// Привязываем JS к полям html документа
+const inputArr = document.querySelector('.js-input')
+const inputButton = document.querySelector('.js-button')
+const outputArr = document.querySelector('.js-outsort')
 
-const qSort = (arr) => {
+function qSort(arr) {
     if (arr.length < 2) {
         return(arr)
     } else {
@@ -29,7 +18,23 @@ const qSort = (arr) => {
     }      
 }
 
-const arrCharSort = qSort(arrNumber)
-// console.log(arrCharSort)
-alert('Внимание... Ответ:')
-alert(`${arrCharSort}`)
+// НЕМНОГО ПОЛЬЗОВАТЕЛЬСКОГО ИНТЕРФЕЙСА
+// Получает строку, делит на символы бeз ' ', преобразует в цифры
+function getArray(arrString) {    
+    const arrChar = arrString.split(' ');
+    const arrNumber = [];
+    arrChar.forEach(item => arrNumber.push(Number(item)));
+    return arrNumber;
+}
+// Выводит массив в див с классом outputArr
+function render(arrCharSort) {
+    outputArr.innerHTML = [...arrCharSort];
+}
+// Обработчик события: по "клику" на кнопку забирает строку,
+// преобразует в цифры сортирует и отправляет для вывода
+inputButton.addEventListener('click', () => {
+    const arrString = inputArr.value;
+    const arrCharSort = qSort(getArray(arrString));
+    render(arrCharSort); 
+})
+
