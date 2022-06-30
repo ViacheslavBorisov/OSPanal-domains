@@ -6,6 +6,7 @@
 // А теперь смотрим GIT :)
 
 function showCount(timeLimit) {
+//    console.log('Counter', timeLimit, 'is run...');
     for (let i = 1; i <= timeLimit; i++) {
         timer(i);
     }
@@ -15,6 +16,33 @@ function showCount(timeLimit) {
     }
 }
 
+/* Without promices */
+// Даже первый счетчик блокируется alert.
+// const time1 = 5;
+// const time2 = 3;
+// const time3 = 2;
+// const time4 = 4;
+// showCount( time1 );
+// setTimeout( () => {
+//     showCount( time2 );
+//     setTimeout( () => {
+//         showCount( time3 );
+//         setTimeout( () => {
+//             showCount( time4 );
+//             setTimeout( () => {
+//                 console.log( 'This count has done' );            
+//                 },  time4 * 1000 
+//             );
+//             }, time3 * 1000 
+//         );
+//         }, time2 * 1000 
+//     );    
+//     }, time1 * 1000 
+// );
+
+
+/* Use promices */
+// И тут первый счетчик блокируется alert - работает, но результат не выводится ((                                     
 async function timer (sec) {
     let msec = sec * 1000;    
     let variable = new Promise((resolve, reject) => {
@@ -26,13 +54,20 @@ async function timer (sec) {
     return 'Vasya';
 }
 
-timer(0)
-    .then(value => { if (value == 'Vasya') timer(5)
-    .then(value => { if (value == 'Vasya') timer(0)
-    .then(value => { if (value == 'Vasya') timer(4)
-})
-})
-});
+timer(7)
+    .then( value => { 
+        if ( value == 'Vasya' ) 
+        timer(2)
+            .then( value => { 
+                if ( value == 'Vasya' ) 
+                timer(3)
+                    .then( value => { 
+                        if (value == 'Vasya') timer(4)
+                    })
+            })
+    });
+
+alert('Ну че - как?');
 
 
 
