@@ -14,7 +14,8 @@ function qSort(arr) {
         const markElem = arr[Math.floor(Math.random() * arr.length)]
         const less = arr.filter(value => value < markElem)
         const more = arr.filter(value => value > markElem)
-        return [...qSort(less), markElem, ...qSort(more)]
+        const equal = arr.filter(value => value == markElem)
+        return [...qSort(less), ...equal, ...qSort(more)]
     }      
 }
 
