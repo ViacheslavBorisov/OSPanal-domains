@@ -1,6 +1,9 @@
+// 'use strict';
 // 1.Проба поработать с методом this.
 // this - это не имя объекта (ссылка) - это и есть весь объект.
 // У объектов НЕТ ИМЕН!!!
+// this объекта определяется объектом, внутри которого this находится.
+// this функции определяется местом, откуда функция вызвана (и не важно где она находится)!
 // 2.Сравнить способы объявления переменных var и let
 // 3.Поиграться с символами Symbol("name")
 // 4.Преобразование объектов в примитивы
@@ -238,3 +241,45 @@
 // calculator.read();  
 // alert("Sum = " + calculator.sum() );
 // alert( "Mul = " + calculator.mul() );
+
+// "use strict";
+// console.log( 'Global object:', this );
+// console.log( 'In a functions:' );
+/*const rez = [];
+let i = 0;
+const obj_0 = {
+    name : 'obj_0',
+    aaa : 10,
+    ddd : funct,
+    eee : this,
+}
+const obj_1 = {
+    name : 'obj_1',
+    fff : 14,
+}
+function funct() {
+    this.prop = i
+    if ( this !== global ) console.log( i, this );
+    i++; 
+    return this;
+}
+rez[i] = funct();
+rez[i] = new funct();
+rez[i] = obj_0.ddd();
+rez[i] = funct.call( obj_0 );
+rez[i] = obj_0.ddd.call( obj_1 );
+rez[i] = obj_0.eee; console.log( i, rez[i] );
+console.log( rez[ 4 ] === rez[ 1 ] ? 'All right!' : 'WTF?!!' );
+*/
+
+// function makeCounter() {
+//     makeCounter.count = 0;
+//     return function() {
+//     //   if ( this !== global ) console.log( this );
+//       return makeCounter.count++; // есть доступ к внешней переменной "count"
+//     };
+// }
+// let counter = makeCounter();
+// console.log( counter() ); // 0
+// console.log( counter() ); // 1
+// console.log( counter() ); // 2
