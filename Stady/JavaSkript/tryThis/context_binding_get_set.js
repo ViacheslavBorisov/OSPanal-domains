@@ -96,21 +96,21 @@
 // IS_DONE
 
 // Стрелочные функции
-let group = {
-    title: "Our Group",
-    students: ["John", "Pete", "Alice"],
-    showList() {
-      console.log( this == global ? 'global' : this ); // this метода объекта = объект
-      this.students.forEach(  // массив students находит, но внутри forEach за счет выражения или блока кода теряем this для title
-        function(student) { console.log( this == global ? 'global' : this ); console.log(this.title + ': ' + student) }
-      );
-      this.students.forEach(
-        student => console.log(this.title + ': ' + student) // а в стрелочной функции this берется "снаружи". Ближайшая "наружа" -
-        // this метода showList = объекту group
-      )
-    }
-  };
-  group.showList();
+// let group = {
+//     title: "Our Group",
+//     students: ["John", "Pete", "Alice"],
+//     showList() {
+//       console.log( this == global ? 'global' : this ); // this метода объекта = объект
+//       this.students.forEach(  // массив students находит, но внутри forEach за счет выражения или блока кода теряем this для title
+//         function(student) { console.log( this == global ? 'global' : this ); console.log(this.title + ': ' + student) }
+//       );
+//       this.students.forEach(
+//         student => console.log(this.title + ': ' + student) // а в стрелочной функции this берется "снаружи". Ближайшая "наружа" -
+//         // this метода showList = объекту group
+//       )
+//     }
+//   };
+//   group.showList();
 // результат:
 // global
 // undefined: John
@@ -121,3 +121,26 @@ let group = {
 // Our Group: John
 // Our Group: Pete
 // Our Group: Alice
+
+// GET & SET
+// let user = {
+//   name: "John",
+//   surname: "Smith"
+// };
+// Object.defineProperty(user, 'fullName', { // задаем св-во fullName состоящее из
+//   get() {                                  // флага get - вернет имя и фамилию в одной строке
+//     return `${this.name} ${this.surname}`;
+//   },
+//   set(value) {                             // флага set - получит строку, разберет ее на значения существующих св-в.
+//     [this.name, this.surname] = value.split(" ");
+//   }                                      // enumerable & configurable явно не указаны, значит false.
+// });
+// Object.defineProperty( user, 'surname', { enumerable: false, configurable: true} );
+// // Object.defineProperty( user, 'surname', { writable: false} );
+// user.surname = "Pupking";
+// console.log( user.surname );
+// console.log(user.fullName); // John Smith
+// Object.defineProperty( user, 'FullName', { enumerable: true} );
+// for(let key in user) console.log(key); // name, surname, - а реально св-ва fullName в объекте нет.
+// let props = Object.getOwnPropertyDescriptors( user );
+// console.log( JSON.stringify( props, null, 2 ) );

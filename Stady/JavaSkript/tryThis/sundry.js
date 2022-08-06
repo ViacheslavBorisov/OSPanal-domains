@@ -1,4 +1,8 @@
 'use strict';
+if ( globalThis.toString() == '[object global]' ) global.alert = function( ...arg ) { console.log( ...arg ) };
+if ( globalThis.toString() == '[object Window]' ) {
+    let temp = alert;
+    window.alert = function(...arg) { temp( arg.join(' ') )}};
 // Типы данных
 // console.log( typeof undefined );
 // console.log( typeof null );
@@ -16,7 +20,7 @@
 // console.log( 'NaN = NaN', NaN == NaN );
 // console.log( 'lalala' == NaN );
 // console.log( NaN.toString() );
-// console.log( 'NaN' == NaN.toString() );
+// console.log( 'NaN' == NaN.toString() )
 
 // Деструктурирующее присваивание
 // let a = 5;
@@ -243,3 +247,222 @@
 // b.met.call( a );
 // let y = b.met;
 // y();
+
+//Отсортировать только четные числа в массиве
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const rez = [];
+// arr.forEach( (el) => el % 2 == 0 ? rez.push('chet') : rez.push('nchet') );
+// console.log( ...rez );
+// let chet = [];
+// arr.forEach( (el) =>  el % 2 == 0 ? chet.push(el) : el );
+// console.log(chet);
+// chet.sort( (a, b ) => b - a );
+// console.log(chet);
+// rez.length = 0;
+// arr.forEach( (el) => el % 2 == 0 ? rez.push(...chet.splice( 0, 1 ) ) : rez.push( el ) );
+// console.log( ...rez );
+// chet = null;
+// chet = new Array(4);
+// console.log( chet[5] );
+// console.log( chet );
+// chet = [];
+// chet.length = 3;
+// console.log( chet );
+
+// Начать предложение с большой буквы
+// let str = 'мама мыла раму';
+// // str = str.split('');
+// str = [ str[0].toUpperCase(), str.slice(1) ].join('');
+// // str[0] = str[0].toUpperCase();
+// // str = str.join('');
+// console.log(str);
+
+// счастливое число. Если в числе значение какой-то цифры равно числу ее вхождений в число - число
+// счастливое. Вывести наибольшее счастливое число.
+// let num = 112346445355166;
+// function maxHappyNumb( n ) {
+//   n = [...String( n )].sort(); //Array.from( String( n ) ).sort();
+//   console.log(...n);
+//   let happyNumber;
+//   let count = 1;
+//   n.forEach( ( el, i )  => {
+//       if (el == n[ i+1 ] ) { count++; return; }
+//       if ( +el == count ) happyNumber = el;
+//       count = 1;
+//     } 
+//   );
+//   return ( !happyNumber ) ? '0: Все числа глубоко несчастны :(' : happyNumber;
+// }
+// console.log( maxHappyNumb(num) );
+
+// Создать объект из строки. (Распарсить. Нужно!)
+// const inData = "user.name.firstName=Slava&user.name.lastName=Borisov&user.favoriteColor=light%20Blue&experiments.theme=dark";
+// console.log( inData );
+// function objFromStr( str ) {
+//   const rez = {};
+//     const feelds = str.split('&'); // Разбиваем на значения свойств + пути к ним
+//     for (let el of feelds) {
+//       console.log( el );
+//       let current = rez;
+//       const feeld = el.split('.'); // Разбиваем на участки пути + свойство на последнем участке
+//       for (let item of feeld ) {
+//         if ( item.indexOf('=') !== -1 ) {     // если свойство содержит и значение
+//           const sorce = item.split('=');      // разбить на отдельно поле и отдельно значение
+//           current[sorce[ 0 ]] = sorce[ 1 ];   // совйству присвоить значение
+//           break;
+//         } 
+//         if( !current[item] ) current[item] = {}; // если свойства с таким именем в объекте еще нет - 
+//                                                  // создаем {} (т.к. когда значение не объект уже рассмотрели выше)
+//         current = current[item];                 // переводим "текущее положение курсора" в объект, и так пока не
+//       }                                       // наткнемся на конкретное значение свойства в виде знака "=" перед ним.
+//     }
+//   return rez;
+// }
+// console.log( 'Результирующий объект:', JSON.stringify( objFromStr( inData ), null, 3 ) );
+
+// Числа Фибоначчи. Цикл. [1,1,2,3,5,8,13,21,34,55]
+// function fib( n ) {
+//   let a =1, b = 1;
+//   for( let i=3; i<=n; i++) {
+//     [ a, b ] = [ b, a+b ];
+//   }
+//   return b;
+// }
+// let n = 10;
+// console.log('fibonachi n =', n, ':', fib(n) );
+
+// i++ vs ++i
+// for( var i = 0; i <= 5; i++) {
+//   console.log('i++', i);
+// }
+// console.log('i++ arter', i);
+// for( var i = 0; i <= 5; ++i) {
+//   console.log('++i', i);
+// }
+// console.log('++i arter', i);
+// console.log( ++i ); // прибавить потом вывести
+// console.log( i++ ); // вывести потом прибавить
+//
+// if (function f(){}) {
+//   alert(typeof f);
+// }
+// alert( 20e-1['toString'](2) );// основание системы счисления
+// for(let i=0; i<10; i++) { // var i - выведет все 10
+//   setTimeout(function() { // let i - от 0 до 9
+//     alert(i); // Предполагаю, что за счет блочной видимости let i
+//   }, 100); // объявляется каждую итерацию заново, а var только в начале
+// }
+
+// По мотивам красивой геометрической задачи с "парусом"
+// function across() {
+// const iks = [];
+// const y = [];
+// let znak = 0;
+// let f1, f2; 
+// for( let x = 0; x < 10; x +=0.0001 ) {
+//   f1 = 10 - Math.sqrt( 25 - (x-5)**2 );
+//   f2 = Math.sqrt( 100 - x**2 );
+//   if ( f1 == f2 || znak * ( f1 - f2 ) < 0 ) { 
+//     iks.push(x);
+//     y.push(Math.sqrt(100-x**2));
+//   }
+//   znak = f1 - f2;
+// }
+//   console.log( iks, y );
+//   return iks[1];
+// }
+// across();
+// function hard(side, acr) {
+//   let sq1, sq2, sq3; 
+//   function squearCalc( func, min, max, step ) {
+//     let sq = 0;  
+//     for( let i = min; i < max; i += step ) {
+//         sq += func( i ) * step;
+//     }
+//     return sq;    
+//   }
+//   function externalCircle( x ) {
+//     return Math.sqrt( side**2 - x**2 );
+//   }
+//   function firstCircle( x ) {
+//     return (side/2)**2 + Math.PI*25/4;
+//   }
+//   function secondCircle( x ) {
+//     return side - Math.sqrt( (side/2)**2 - (x-5)**2 );
+//   }
+//   sq1 = squearCalc( externalCircle, 0, acr, 0.0001);
+//   console.log( sq1 );
+//   sq2 = firstCircle();
+//   console.log( sq2 );
+//   sq3 = squearCalc( secondCircle, 5, acr, 0.0001);
+//   console.log( sq3 );
+//   return  sq1 - sq2 - sq3; 
+// }
+// let rez = hard(10, 8);
+// console.log( rez );
+// rez = hard( 10, across());
+// console.log( rez );
+
+// Проверяем работоспособность формулы площади сегмента круга отсекаемого хордой по заданным радиусу и длине хорды.
+// Тестовые результаты - площадь, интеграл.
+
+function f2(x) {
+  return 0;
+}
+function f1(x) {
+  // (x-2)**2 + (y+1)**2 = 4 => y = Math.sqrt( 4 - (x-2)**2 ) - 1;
+  return Math.sqrt( 4 - (x-2)**2 ) - 1;
+}
+// function squear( f, range, di ) {
+//   let sq = 0;
+//   console.log( f, range, di );
+//   for( let i = range[0]; i < range[1]; i += di ) {
+//     sq += f(i) * di;
+//   }
+//   console.log(`squear of sigment = ${sq}`);
+//   return sq;
+// }
+// across( f1, f2, 0, 4, 0.0001);
+// let a = squear( f1, across( f1, f2, 0, 4, 0.0001), 0.00001 );
+//console.log( `full circle squear ${Math.PI*4/a}`);
+
+// Tестируем формулу!!!! Доделать как-нибудь при случае, вычисляя без интегралов, а находя точки пересечения графиков
+// function across( f1, f2, min, max, dx ) { // f1, f2 - пересекающиеся функции, min, max - границы поиска точек пересечения, dx - шаг вычисления
+//   let sign = 0;
+//   const crosspoints = [];
+//   for( let x = min; x <= max; x += dx ) {
+//     let rezF1 = f1(x);
+//     let rezF2 = f2(x);
+//     if (( rezF1 == rezF2 ) || ( sign*( rezF1 - rezF2 ) < 0) ) {
+//       console.log( `crosspoint: x= ${x} , f1(x)=${rezF1} , f2(x)=${rezF2}`);
+//       crosspoints.push([x, (rezF1 + rezF2 ) / 2]);
+//     }
+//     sign = rezF1 - rezF2;
+//   }
+//   console.log('crosspoints:', crosspoints); 
+//   return crosspoints;
+// };
+// function segmentSqwere( r, x ) {
+//   console.log('segSq:',r, x);
+//   let c = Math.sqrt( (x[0][0] - x[1][0])**2 + (x[1][0] - x[1][1])**2);
+//   let sq = r*r*Math.asin(c/(2*r)) - (c/2)*Math.sqrt(r*r-c*c/4); // S сектора - S треугольника по формуле Герона
+//   console.log(`squear of sigment by magic formula: ${sq}`);
+//   return sq;
+// };
+// function funcGraph( r, x0, y0 ) {
+//   // (x-x0)**2 + (y-y0)**2 = r*r => y = Math.sqrt( r*r - (x-x0)**2 ) + y0;
+//   return Math.sqrt( r*r - (x-x0)**2 ) + y0;
+// };
+// // funcGraph, across, segmentSqwere, cторона квадрата, радиусы и координаты центров трех окружностей, область определения исследования, точность(шаг вычислений)
+// function hardTask( fg, acr, ss, sqwereSide, extR, extX, extY, f1R, f1X, f1Y, f2R, f2X, f2Y, rangeMin, rangeMax, deltaX ) {
+//   let sqExt = 0;
+//   let pointA = [];
+//   let pointB = [];
+//   let pointC = [];
+//   crossPoints = [];
+//   crossPoints = acr( fg( extR, extX, extY), fg( f1R, f1X, f1Y ), rangeMin, rangeMax, deltaX );
+//   pointA = [crossPoints[0][0], crossPoints[0][1]];
+//   pointB = [crossPoints[1][0], crossPoints[1][1]];
+
+// }
+// let b = segmentSqwere( 2, across( f1, f2, 0, 4, 0.000001) );

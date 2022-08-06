@@ -216,9 +216,10 @@
 // sayHi( 'vasya' );
 // console.log( sayHi.name );
 
+// Синтаксис new Function
 const str = 'return x + y';
 let a = 1;
 let b = 6;
 let func = new Function( 'x, y', str);
-alert( func( a, b ) );
+console.log( func( a, b ) );
 
