@@ -466,3 +466,53 @@ function f1(x) {
 
 // }
 // let b = segmentSqwere( 2, across( f1, f2, 0, 4, 0.000001) );
+
+// Промисы
+// сдал ли экзамен
+// const passexam = false;
+// // промис
+// const result = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     passexam ? resolve('Папа подарил 100$.') : reject('Папа не подарил 100$.');
+//   }, 5000);
+// });
+
+// result
+//   .then(value => {
+//     console.log(result);
+//     console.log(value);
+//   })
+//   .catch(value => {
+//     console.log(result);
+//     console.error(value);
+//   });
+
+//let a = Math.max(...arr);
+//let a = Math.max.apply(null, arr); // Работает!
+//let a = arr.findMax(); // Нет такого метода
+//let a = arr.reduce(function(prev, item) { return Math.max(prev, item) }); // Работает!
+//let a = arr.reduce((prev, item) => Math.max(prev, item) ); // Работает!
+//let a = (1,5 - 1) * 2;
+
+let user = {
+  name: "Вася",
+  age: 30,
+  _password: "***"
+};
+
+user = new Proxy(user, {
+  ownKeys(target) {
+    return Object.keys(target).filter(key => !key.startsWith('_')); // Возвращает массив ключей [ 'name', 'age' ]
+  }
+});
+
+// ownKeys исключил _password
+for(let key in user) alert(key); // name, затем: age
+
+// аналогичный эффект для этих методов:
+alert( Object.keys(user) ); // name,age
+alert( Object.values(user) ); // Вася,30
+let o = {};
+let i = o;
+o = new Proxy(o, {});
+alert( i == o );

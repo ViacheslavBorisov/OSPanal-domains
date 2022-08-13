@@ -396,6 +396,7 @@
 // console.log( civility( '   aldjhgf ;ka' ) );
 
 // Берем код из символа и выводим символ по коду. ЕСТЬ НЮАНСЫ!
+// const folder = '📁';
 // const fu = '🖕.';
 // const fu = '…';
 // let fuCode = fu.codePointAt( 0 );
