@@ -1,0 +1,43 @@
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+h2 {
+    text-align: center;
+    font-style: italic;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+table {
+    width: 500px;
+}
+
+th {
+    text-align: center;
+    font-weight: bold;
+}
+
+td {
+    text-align: center;
+    font-weight: bold;
+}
+
+p {
+    font-family: LeoHand;
+    width: 300px;
+    text-align: justify;
+    font-size: 30px;
+    line-height: 0.8;
+}
+
+h3 {
+    width: 300px;
+    text-align: center;
+}
+
+p {
+	font: bold italic 26px/30px "Times New Roman";
+}
+

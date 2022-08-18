@@ -1,0 +1,30 @@
+h1 {
+    color: red;
+}
+
+p {
+    color: darkblue;
+    font-family: LeoHand;
+    font-size: 20px;
+    width: 400px;
+}
+
+h6 {
+    color: rgb(255, 236, 114);
+    background-color: blue;
+    width: 173px;
+}
+
+h5 {
+    color: #ff0000;
+}
+
+td {
+    text-align: center;
+    height: 50px;
+    width: 100px;
+}
+
+p {
+    text-align: justify;
+}
