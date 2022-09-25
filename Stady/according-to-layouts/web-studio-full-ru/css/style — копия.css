@@ -1,0 +1,211 @@
+/* Добавить к hover + focus */
+/* Доделать навигацию - цвет, подчеркивание */
+
+:root {
+  --color-blue: rgba(33, 150, 243, 1);
+  --color-black-text: rgba(33, 33, 33, 1);
+  --color-gray-text: rgba(117, 117, 117, 1);
+  --color-black-background-footer: rgba(47, 48, 58, 1);
+  --color-gray-icon: rgba(175, 177, 184, 1);
+  --color-white: rgba(255, 255, 255, 1);
+  --color-white-background-fitures: rgba(245, 244, 250, 1);
+  --color-white-icon-background-footer: rgba(255, 255, 255, 0.1);
+  --color-address-footer: rgba(255, 255, 255, 0.6);
+  --color-wollet-hover: #2196F3;
+  
+  --color-accent: var(--color-blue);
+  --color-text-main: var(--color-black-text);
+  --color-text-accent: var(--color-gray-text);
+  --color-white-text: var(--color-white);
+}
+
+/* font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif; */
+/* body: В боди выносим все наиболее общие настройки */
+body {
+  /* font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif; */
+  font-family: 'Roboto', sans-serif;
+  color: var(--color-text-main);
+
+  background-color: var(--color-white);
+
+  box-sizing: border-box;
+  width: 1600px;
+
+  /* background-color: antiquewhite; */
+  border-right: 1px solid black;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text-main);
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+/* header */
+.header {
+  box-sizing: border-box;
+  padding: 0 215px;
+  width: 1600px;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.17;
+  letter-spacing: 0.025em;
+
+  background-color: antiquewhite;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: block;
+  margin-right: 85px;
+
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.06;
+  letter-spacing: 0.03em;
+}
+
+.logo span {
+  color: var(--color-accent);
+}
+
+.header-nav ul {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  width: 151%;
+  max-width: 500px;
+}
+
+.header-nav li {
+  padding-top: 1px;
+
+  background-color: aquamarine;
+}
+
+
+.header-contacts ul {
+  padding-left: 0;
+  max-width: 600px;
+
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  flex-wrap: wrap;
+ 
+  letter-spacing: 0.02em;
+}
+
+.header-contacts li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1px;
+}
+
+.header-contacts svg {
+  margin: 0 10px 0 30px; 
+}
+
+.header-contacts li:hover svg,
+.header-contacts li:hover a {
+  color: var(--color-accent);
+  fill: var(--color-accent);
+}
+
+/* MAIN content */
+/* Hero block section */
+.hero>div {
+  position: relative;
+  top: -1px;
+  width: 1600px;
+  height: 600px;
+  
+  background-image: url(../images/hero-bg-img.jpg);
+  background-size: auto;
+  
+  z-index: 1;
+}
+
+.hero>div>div {
+  position: absolute;
+  width: 1600px;
+  height: 600px;
+  
+  background-image: url(../images/hero-bg-overlay.png);
+  background-size: auto;
+  background: rgba(47, 48, 58, 0.8);
+  z-index: 2;
+}
+
+.hero h1 {
+  position: relative;
+  margin-top: 200px;
+  margin-bottom: 30px;
+  
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.37;
+
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: var(--color-white-text);
+}
+
+.wrapper-center {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 50px;
+  width: 200px;
+  border-radius: 5px;
+  background-color: var(--color-accent);
+ 
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  /* identical to box height, or 188% */
+  color: var(--color-white-text);
+}
+
+
+
+
+
+
+
+
+
+
+

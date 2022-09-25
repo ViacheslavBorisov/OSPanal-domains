@@ -1,0 +1,38 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  height: 100%;
+  width: 100%;
+  background-color: aquamarine;
+}
+
+.object {
+  position: absolute;
+  width: 200px;
+/* центрируем по вертикали */
+
+/* для фиксированной высоты */
+/* height: 200px; */
+/* top: calc(50% - 100px); */
+
+/* для высоты, определяемой контентом */
+  top: 50%;
+/* translate(0, -50%); 0 - по Х ничего (уже выровняли), 
+   по Y -50% - обратно на пол высоты блока */
+  transform: translate(0, -50%); 
+
+/* центрируем по горизонтали */
+  left:  0;
+  right:  0;
+  margin: 0 auto;
+
+  background-color: antiquewhite;
+}

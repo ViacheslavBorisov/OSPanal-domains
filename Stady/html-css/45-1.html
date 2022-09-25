@@ -3,23 +3,90 @@
   <head>
   <meta charset="utf-8">
   <title>Селекторы атрибутов</title>
+  <link rel="stylesheet" href="45-1.css">
   <style>
-   Q {
-    font-style: italic; /* Курсивное начертание */
-    quotes: "\00AB" "\00BB"; /* Меняем вид кавычек в цитате */
-   }
-   Q[title] {
-    color: maroon; /* Цвет текста */
-   }
-  </style>
+    DIV[class|="block"] {
+     background: #306589; 
+     color: #acdb4c; 
+     padding: 5px; 
+    }
+    DIV[class|="block"] A {
+     color: #fff; 
+    }
+    div[class*="ddd"] {
+     height: auto;
+     background-color: yellow;
+     color: blueviolet;
+    }
+   </style>
  </head>
  <body>
 
-  <p>Продолжая известный закон Мерфи, который гласит: <q>Если неприятность 
-   может случиться, то она обязательно случится</q>, можем ввести свое наблюдение: 
-  <q title="Из законов Фергюссона-Мержевича">После того, как веб-страница 
-   будет корректно отображаться в одном браузере, выяснится, 
-   что она неправильно показывается в другом</q>.</p>
+  <p class="ddd">Продолжая известный закон Мерфи, который гласит: 
+    <q>Если неприятность 
+    может случиться, то она обязательно случится
+    </q>
+    , можем ввести свое наблюдение:
+    <br> 
+    <q title="Из законов Фергюссона-Мержевича">После того, как веб-страница 
+    будет корректно отображаться в одном браузере, выяснится, 
+    что она неправильно показывается в другом
+    </q>
+    .
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, quas.
+  </p>
+
+  <a href="#ref" id="ref">Ссылка сама на себя</a><br>
+  <a href="img/DontFuckMyMind.jpg" download="DontFuckMyMind.jpg" title="Пытаемся загрузить">И какая-то другая ссылка</a><br>
+  <a href="img/png-clipart-emoji-sticker-cool-emoji.png" download="png-clipart-emoji-sticker-cool-emoji.png" title="Пытаемся загрузить">И какая-то другая ссылка</a><br>
+  <a href="http://google.com" target="_blank" title="Пошукова система Google">
+    Google.com
+  </a>
+  <div class="benchmark"></div>
+  <div></div>
+  <div class="frame"></div>
+
+  <span>text</span>
+  <span>text</span>
+  <span>text</span>
+  <span>text</span><span>text</span>
+  <span>text</span>
+  
+
+  <!-- <p>Еще один абзац текста</p>
+  <p>
+    И еще один с цитатой:
+    <br>
+    <q title="Пифагор, автор таблицы" class="aaa ccc ddd" id="bbb">
+      Квадрат гипотенузы равен сумме квадратов катетов
+    </q>
+    .
+    <br>
+    <q title="Архимед, автор закона" class="aaa ccc eee" id="fff">
+      На тело, погруженное в жидкость, действует сила, рвная массе воды, вытесненной этим телом, умноженной на ускорение свободного падения
+    </q>
+    .
+  </p> -->
+  <!-- <div class="aaa-bbb-ccc-ddd">
+    <p>And continue...</p>
+  </div>
+  <div class="block-menu-therm">
+    <h2>Термины</h2>
+    <div class="content">
+      <ul class="menu">
+       <li><a href="t1.html">Буквица</a></li>
+       <li><a href="t2.html">Выворотка</a></li>
+       <li><a href="t3.html">Выключка</a></li>
+       <li><a href="t4.html">Интерлиньяж</a></li>
+       <li><a href="t5.html">Капитель</a></li>
+       <li><a href="t6.html">Начертание</a></li>
+       <li><a href="t7.html">Отбивка</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="text text1-count1-text">Первый абзац</p>
+  <p class="text text2-count2-text">Второй абзац</p>
+  <p class="text text3-count3-text">Третий абзац</p> -->
 
  </body>
 </html>

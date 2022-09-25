@@ -1,0 +1,47 @@
+body {
+    background-color: wheat;
+    padding: 5%;
+}
+
+.parent {
+    border: 1px solid red;
+    padding: 5%;
+    height: 500px;
+    background-color: aliceblue;
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.parent > div {
+    border: 1px solid rgb(13, 17, 233);
+    height: 30%;
+    /* width: 20%; */
+    font-size: 50px;
+    font-style: normal;
+    font-weight: bolder;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+#d1 {
+    background-color: red;
+}
+
+#d2 {
+    background-color: orange;
+}
+
+#d3 {
+    background-color: yellow;
+}
+
+#d4 {
+    background-color: green;
+}
+

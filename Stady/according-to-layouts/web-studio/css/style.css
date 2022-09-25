@@ -1,0 +1,63 @@
+body {
+    background-color: antiquewhite;
+}
+
+svg {
+    fill: #757575;
+}
+
+a:hover {
+    color: blue;
+    
+}
+
+a:hover > svg {
+    fill: blue;
+}
+
+svg:hover {
+    fill:aqua;
+}
+
+.tlg {
+    box-sizing: border-box;
+    background-image: url("../images/svg/background-telegramm.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: inline-flex;
+    justify-content: center;
+    padding: 2px 30px;
+}
+
+.tlg > p {
+    color: white;
+    position: relative;
+}
+
+
+/* .fancybox-content {
+    background-color: aliceblue;
+    display: none;
+}
+
+.fancybox-content:active {
+    animation-timing-function: cubic-bezier(.5, 0, .14, 1);
+    -webkit-backface-visibility: hidden;
+    background: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    left: 0;
+    max-width: none;
+    overflow: visible;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    transition-property: transform, opacity;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 99995;
+} */

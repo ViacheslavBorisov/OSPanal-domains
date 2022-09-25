@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 1vw;
+  background-color: antiquewhite;
+}
+
+.parent {
+  position: relative;
+  padding: 1vw;
+  background-color: aquamarine;
+  /* text-align: center; */
+  /* display: flex;
+  justify-content: space-between; */
+  text-align: center;
+  
+}
+
+.child {
+  position: relative;
+  display: inline-block;
+  width: 800px;
+  max-width: 94.5vw;
+  background-color: rgb(223, 223, 40);
+  text-align: left;
+}
+
+  
+  .left {
+    position: absolute;
+    top: 1vw;
+    bottom: 1vw;
+    width: calc((100vw - 800px) / 2 - 3.2vw);
+    min-width: 0;
+    height: auto;
+    background-color: rgb(30, 72, 210);
+    opacity: 0.5;
+  }
+
+  .right {
+    position: absolute;
+    top: 1vw;
+    bottom: 1vw;
+    right: 1vw;
+    width: calc((100vw - 800px) / 2 - 3.2vw);
+    min-width: 0;
+    height: auto;
+    background-color: rgb(168, 16, 214);
+    opacity: 0.5;
+  }
+  /* .child::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(3.5vw - (100vw - 800px) / 2 - 0.8vw);
+    width: calc((100vw - 800px) / 2 - 3.5vw);
+    min-width: 0;
+    height: auto;
+    background-color: rgb(30, 72, 210);
+    opacity: 0.5;
+  }
+  .child::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: calc(3.5vw - (100vw - 800px) / 2 - 0.8vw);
+    width: calc((100vw - 800px) / 2 - 3.5vw);
+    min-width: 0;
+    height: auto;
+    background-color: rgb(168, 16, 214);
+    opacity: 0.5;
+  } */
+
+  @media ( max-width: 1000px ) {
+    .left, .right {
+      background-color: red;
+      opacity: 1;
+    }
+  }

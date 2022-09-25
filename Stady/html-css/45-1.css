@@ -1,0 +1,100 @@
+body {
+    background-image: url(img/Фон_тетрадь.jpg);
+    /* background-repeat: round; */
+    background-size: cover;
+    /* background-position: center; */
+}
+
+Q {
+    font-style: italic; /* Курсивное начертание */
+    quotes: "\00AB" "\00BB"; /* Меняем вид кавычек в цитате */
+}
+
+Q[title$="таблицы"] {
+    color: blueviolet;
+}
+
+/* [class] {
+    color: green;
+} */
+
+Q[title^="Из"] {
+    color: red;
+}
+
+Q[class~="ddd"] {
+    color: yellowgreen;
+}
+
+/* Q[id] {
+    color: blue;
+} */
+
+[title] {
+    color: orange;
+}
+
+/*Q[title*="автор"] {
+    color: blue;
+}
+
+Q[title*="законов"] {
+    color: violet;
+} */
+
+[class*="text2"] { color: red; }
+
+a[id="ref"]:link {
+    color: blue;
+}
+
+a[id="ref"]:visited {
+    color: green;
+}
+
+a[id="ref"]:hover {
+    text-decoration: none;
+}
+
+a[id="ref"]:active {
+   color: red;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: underline;
+    color:rgb(59, 80, 53);
+}
+
+.benchmark {
+    background-color: yellow;
+    border-color: black;
+    border-width: 1px;
+    margin-left: 30px;
+}
+
+div {
+    height: 80px;
+    width: 100px;
+    border-color: blue;
+    border-width: 30px;
+    border-style: solid;
+    /* border-radius: 20px; */
+    background-color: aquamarine;
+}
+
+
+
+.frame {
+    border-style: ridge;
+    /* border-radius: 30%; */
+    box-sizing: border-box;
+    margin-left: 30px;
+}
+
+span {
+    border: 1px solid red;
+}

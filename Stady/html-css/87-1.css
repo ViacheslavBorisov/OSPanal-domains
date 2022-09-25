@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* background-color: aquamarine; */
+}
+
+body {
+    background-color: gray;
+}
+
+.parent {
+    display: block;
+    margin: 5%;
+    padding: 3%;
+    text-align: justify;
+    background-color: wheat;
+    border: 2px solid green;
+}
+
+img {
+    opacity: 0.5;
+    border: 1px solid red;
+    margin: 5px 10px 5px 10px;
+}
+
+
+#img1 {
+    float: left;
+    /* margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px; */
+}
+
+#img2 {
+    float: right;
+    /* margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px; */
+}
+
+p {
+    border: 1px solid blue;
+}
+
+
