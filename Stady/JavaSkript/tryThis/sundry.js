@@ -406,13 +406,13 @@ if ( globalThis.toString() == '[object Window]' ) {
 // Проверяем работоспособность формулы площади сегмента круга отсекаемого хордой по заданным радиусу и длине хорды.
 // Тестовые результаты - площадь, интеграл.
 
-function f2(x) {
-  return 0;
-}
-function f1(x) {
+// function f2(x) {
+//   return 0;
+// }
+// function f1(x) {
   // (x-2)**2 + (y+1)**2 = 4 => y = Math.sqrt( 4 - (x-2)**2 ) - 1;
-  return Math.sqrt( 4 - (x-2)**2 ) - 1;
-}
+//   return Math.sqrt( 4 - (x-2)**2 ) - 1;
+// }
 // function squear( f, range, di ) {
 //   let sq = 0;
 //   console.log( f, range, di );
@@ -494,25 +494,47 @@ function f1(x) {
 //let a = arr.reduce((prev, item) => Math.max(prev, item) ); // Работает!
 //let a = (1,5 - 1) * 2;
 
-let user = {
-  name: "Вася",
-  age: 30,
-  _password: "***"
-};
+// let user = {
+//   name: "Вася",
+//   age: 30,
+//   _password: "***"
+// };
 
-user = new Proxy(user, {
-  ownKeys(target) {
-    return Object.keys(target).filter(key => !key.startsWith('_')); // Возвращает массив ключей [ 'name', 'age' ]
-  }
-});
+// user = new Proxy(user, {
+//   ownKeys(target) {
+//     return Object.keys(target).filter(key => !key.startsWith('_')); // Возвращает массив ключей [ 'name', 'age' ]
+//   }
+// });
 
 // ownKeys исключил _password
-for(let key in user) alert(key); // name, затем: age
+// for(let key in user) alert(key); // name, затем: age
 
 // аналогичный эффект для этих методов:
-alert( Object.keys(user) ); // name,age
-alert( Object.values(user) ); // Вася,30
-let o = {};
-let i = o;
-o = new Proxy(o, {});
-alert( i == o );
+// alert( Object.keys(user) ); // name,age
+// alert( Object.values(user) ); // Вася,30
+// let o = {};
+// let i = o;
+// o = new Proxy(o, {});
+// alert( i == o );
+
+console.log(123);
+console.log('123');
+console.log(true);
+console.log(NaN);
+console.log(undefined);
+console.log(null);
+console.log(Infinity);
+
+document.write(123);
+document.write("<br>");
+document.write('123');
+document.write("<br>");
+document.write(true);
+document.write("<br>");
+document.write(NaN);
+document.write("<br>");
+document.write(undefined);
+document.write("<br>");
+document.write(Infinity);
+document.write("<br>");
+document.write(`<p><b>'123'<br>123 <br>true <br>NaN <br>undefined <br>infinity</b></p>`);
