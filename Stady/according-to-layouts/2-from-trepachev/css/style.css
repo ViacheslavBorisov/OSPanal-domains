@@ -278,6 +278,7 @@ footer>p {
     width: 35px;
     height: 30px;
     margin: auto 12px;
+    cursor: pointer;
     z-index: 4;
   }
 

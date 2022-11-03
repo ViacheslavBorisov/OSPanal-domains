@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<!-- <?xml version="1.0"?> -->
+	<!-- <test>text</test>
+  <name>john</name>
+  <surn>smit</surn>
+  <names>john</names>
+	<names>eric</names>
+	<names>kyle</names>
+  <tagg attr="val">text</tagg>
+  <user age="23" salary="1000">john</user>
+  	<product cost="100" amount="3">
+		prod1
+	</product>
+	<product cost="200" amount="4">
+		prod2
+	</product>
+	<product cost="300" amount="5">
+		prod3
+	</product> -->
+	<!-- Поиск по вложенному тэгу -->
+  <!-- <elem>bad_text</elem>
+  <tag>
+	  <elem>good_text</elem>
+    <xnya>bad_text</xnya>
+	</tag> -->
+  <!-- Не найдет bad_text, найдет good_text -->
+  <!-- Группа xml тэгов с вложенностью 1 -->
+  <!-- <user>
+		<name>john</name>
+		<surn>smit</surn>
+	</user>
+	<user>
+		<name>eric</name>
+		<surn>wils</surn>
+	</user>
+	<user>
+		<name>kyle</name>
+		<surn>tayl</surn>
+	</user> -->
+  <!-- Конец 1 -->
+  <!-- 2 -->
+  <product cost="100" amount="3">
+		<name>prod1</name>
+		<category>cat1</category>
+	</product>
+	<product cost="200" amount="4">
+		<name>prod2</name>
+		<category>cat2</category>
+	</product>
+	<product cost="300" amount="5">
+		<name>prod3</name>
+		<category>cat3</category>
+	</product>
+  <!-- Конец 2 -->
+</root>
